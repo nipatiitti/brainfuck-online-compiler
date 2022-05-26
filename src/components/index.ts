@@ -1,3 +1,3 @@
-const HeaderText = () => import('./header-text')
+const HeaderText = () => import('./memory-cell')
 
 export { HeaderText }

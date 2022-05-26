@@ -1,7 +1,7 @@
 import { build } from 'esbuild'
 import glob from 'glob'
 
-const entryPoints = glob.sync('../src/routes/**/*.ts')
+const entryPoints = glob.sync('src/routes/**/*.ts')
 console.log(entryPoints)
 
 const start = Date.now()

@@ -39,3 +39,16 @@ a {
 a:hover {
   color: var(--color-highlight);
 }
+
+button {
+  background-color: var(--color-highlight);
+  border: none;
+  border-radius: 4px;
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--color-secondary);
+}
