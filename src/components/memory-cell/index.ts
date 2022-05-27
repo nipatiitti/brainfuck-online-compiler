@@ -4,6 +4,11 @@ import templateString from './template.html'
 class MemoryCell extends HTMLElement {
   index = '0'
 
+  // Whatch out for attribute changes
+  static get observedAttributes() {
+    return ['index']
+  }
+
   constructor() {
     super()
 
@@ -15,17 +20,19 @@ class MemoryCell extends HTMLElement {
 
     this.shadowRoot.appendChild(template.content.cloneNode(true))
 
-    this.index = this.getAttribute('index')
-    this.shadowRoot.querySelector('#content').innerHTML = tape[this.index]
-    this.shadowRoot.querySelector('#index').innerHTML = this.index
-
-    addTapeListener(async (target, index, value) => {
-      target[index] = value
-
+    addTapeListener(async (_, index, value) => {
       if (index == this.index.toString()) {
         this.shadowRoot.querySelector('#content').innerHTML = value.toString()
       }
     })
+  }
+
+  attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+    if (name === 'index') {
+      this.index = newValue
+      this.shadowRoot.querySelector('#content').innerHTML = tape[parseInt(this.index)]?.toString() || '0'
+      this.shadowRoot.querySelector('#index').innerHTML = this.index
+    }
   }
 }
 

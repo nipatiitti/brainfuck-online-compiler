@@ -1,5 +1,5 @@
 export type TapeListener = (target: Number[], index: string, value: number) => Promise<void> // We force async for faster iteration
-const _tape: Number[] = []
+const _tape: number[] = []
 const _callbacks: TapeListener[] = []
 
 export const tape = new Proxy(_tape, {

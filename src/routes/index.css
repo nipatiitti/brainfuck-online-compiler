@@ -35,6 +35,7 @@ body {
 #memory-cells {
   flex: 2;
   display: flex;
+  align-content: start;
   flex-wrap: wrap;
   overflow-y: auto;
   padding: 1px;
