@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "Frontend for the etkot-bot backend",
+  "description": "Vanilla-ts valuation project",
   "main": "index.js",
   "author": "Niilo Jaakkola (niilo.jaakkola@icloud.com)",
   "license": "MIT",
